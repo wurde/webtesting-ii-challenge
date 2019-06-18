@@ -69,4 +69,18 @@ describe("Landing.js", () => {
     expect(strikes.textContent).toBe('Strikes: 0')
     expect(balls.textContent).toBe('Balls: 0')
   })
+
+  test('fouls increase strikes up to 2', () => {
+    const button_foul = document.getElementById('btn-foul')
+    fireEvent.click(button_foul)
+
+    const strikes = document.getElementById('li-strikes')
+    expect(strikes.textContent).toBe('Strikes: 1')
+
+    fireEvent.click(button_foul)
+    expect(strikes.textContent).toBe('Strikes: 2')
+
+    fireEvent.click(button_foul)
+    expect(strikes.textContent).toBe('Strikes: 2')
+  })
 })

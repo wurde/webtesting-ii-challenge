@@ -37,6 +37,10 @@ function Landing() {
 
   const click_foul = () => {
     set_foul_count(foul_count + 1)
+
+    if (strike_count < 2) {
+      set_strike_count(strike_count + 1)
+    }
   }
 
   const click_hit = () => {
