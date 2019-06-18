@@ -8,7 +8,7 @@
     "start": "node server/app.js",
     "start:server": "nodemon server/app.js",
     "start:client": "npm --prefix client start",
-    "start:all": "concurrently 'npm start:server' 'npm start:client'"
+    "start:all": "concurrently 'npm run start:server' 'npm run start:client'"
   },
   "repository": {
     "type": "git",
