@@ -40,6 +40,8 @@ function Landing() {
   }
 
   const click_hit = () => {
+    set_strike_count(0)
+    set_ball_count(0)
     set_hit_count(hit_count + 1)
   }
 

@@ -52,4 +52,21 @@ describe("Landing.js", () => {
     fireEvent.click(button)
     expect(balls.textContent).toBe('Balls: 0')
   })
+
+  test('strikes and balls reset to 0 on hit', () => {
+    const button_strike = document.getElementById('btn-strike')
+    fireEvent.click(button_strike)
+    const strikes = document.getElementById('li-strikes')
+    expect(strikes.textContent).toBe('Strikes: 1')
+
+    const button_ball = document.getElementById('btn-ball')
+    fireEvent.click(button_ball)
+    const balls = document.getElementById('li-balls')
+    expect(balls.textContent).toBe('Balls: 1')
+
+    const button_hit = document.getElementById('btn-hit')
+    fireEvent.click(button_hit)
+    expect(strikes.textContent).toBe('Strikes: 0')
+    expect(balls.textContent).toBe('Balls: 0')
+  })
 })
