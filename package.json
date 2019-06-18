@@ -6,8 +6,9 @@
   "main": "server/app.js",
   "scripts": {
     "start": "node server/app.js",
-    "start:dev": "nodemon server/app.js",
-    "start:client": "npm --prefix client start"
+    "start:server": "nodemon server/app.js",
+    "start:client": "npm --prefix client start",
+    "start:all": "concurrently 'npm start:server' 'npm start:client'"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "helmet": "^3.18.0"
   },
   "devDependencies": {
+    "concurrently": "^4.1.0",
     "nodemon": "^1.19.1"
   }
 }
