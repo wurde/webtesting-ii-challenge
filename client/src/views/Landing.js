@@ -16,7 +16,13 @@ function Landing() {
   const [hit_count, set_hit_count] = useState(0)
 
   const click_strike = () => {
-    set_strike_count(strike_count + 1)
+    const count = strike_count + 1
+
+    if (count === 3) {
+      set_strike_count(0)
+    } else {
+      set_strike_count(strike_count + 1)
+    }
   }
 
   const click_ball = () => {
