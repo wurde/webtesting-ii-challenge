@@ -3,6 +3,8 @@
  */
 
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import { RootRouter } from './routes/index'
 
 /**
  * Import global styles
@@ -16,9 +18,9 @@ import './App.scss'
 
 function App() {
   return (
-    <div className="App">
-      App
-    </div>
+    <BrowserRouter>
+      <RootRouter mount="/" />
+    </BrowserRouter>
   )
 }
 
