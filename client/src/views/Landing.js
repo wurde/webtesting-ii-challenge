@@ -10,6 +10,10 @@ import { Dashboard, Display } from '../components/Landing/index'
  */
 
 function Landing() {
+  const [innings_array, set_innings_array] = useState([
+    [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]
+  ])
+  const [out_count, set_out_count] = useState(0)
   const [strike_count, set_strike_count] = useState(0)
   const [ball_count, set_ball_count] = useState(0)
   const [foul_count, set_foul_count] = useState(0)
@@ -58,6 +62,8 @@ function Landing() {
   }
 
   const display_props = {
+    innings_array,
+    out_count,
     strike_count,
     ball_count,
     foul_count,

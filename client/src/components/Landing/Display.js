@@ -11,13 +11,34 @@ import React from 'react'
 function Display(props) {
   return (
     <div>
-      <h3>Display</h3>
+      <br/>
 
-      <ul>
-        <li id="li-strikes">Strikes: {props.strike_count}</li>
-        <li id="li-balls">Balls: {props.ball_count}</li>
-        <li id="li-fouls">Fouls: {props.foul_count}</li>
-        <li id="li-hits">Hits: {props.hit_count}</li>
+      <table>
+        <tr>
+          <th colspan="9" style={{"text-align": "left"}}>Innings:</th>
+        </tr>
+        <tr>
+          {props.innings_array.map((inning, index) => {
+            return (
+              <td key={'top-' + index}>{inning[0]}</td>
+            )
+          })}
+        </tr>
+        <tr>
+        {props.innings_array.map((inning, index) => {
+          return (
+            <td key={'bot-' + index}>{inning[1]}</td>
+          )
+        })}
+        </tr>
+      </table>
+
+      <ul style={{"list-style": "none", "padding-left": 0}}>
+        <li id="li-strikes"><b>Outs:</b> {props.strike_count}</li>
+        <li id="li-strikes"><b>Strikes:</b> {props.strike_count}</li>
+        <li id="li-balls"><b>Balls:</b> {props.ball_count}</li>
+        <li id="li-fouls"><b>Fouls:</b> {props.foul_count}</li>
+        <li id="li-hits"><b>Hits:</b> {props.hit_count}</li>
       </ul>
     </div>
   )
