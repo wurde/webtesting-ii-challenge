@@ -26,7 +26,13 @@ function Landing() {
   }
 
   const click_ball = () => {
-    set_ball_count(ball_count + 1)
+    const count = ball_count + 1
+
+    if (count === 4) {
+      set_ball_count(0)
+    } else {
+      set_ball_count(ball_count + 1)
+    }
   }
 
   const click_foul = () => {

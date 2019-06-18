@@ -35,4 +35,21 @@ describe("Landing.js", () => {
     fireEvent.click(button)
     expect(strikes.textContent).toBe('Strikes: 0')
   })
+
+  test('balls increment by 1 and reset at 4 to 0', () => {
+    const button = document.getElementById('btn-ball')
+    fireEvent.click(button)
+
+    const balls = document.getElementById('li-balls')
+    expect(balls.textContent).toBe('Balls: 1')
+
+    fireEvent.click(button)
+    expect(balls.textContent).toBe('Balls: 2')
+
+    fireEvent.click(button)
+    expect(balls.textContent).toBe('Balls: 3')
+
+    fireEvent.click(button)
+    expect(balls.textContent).toBe('Balls: 0')
+  })
 })
