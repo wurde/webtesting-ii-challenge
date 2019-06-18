@@ -11,7 +11,7 @@ import React from 'react'
 function Display(props) {
   return (
     <div>
-      <h3>Dashboard</h3>
+      <h3>Display</h3>
 
       <ul>
         <li>Strikes: {props.strike_count}</li>
