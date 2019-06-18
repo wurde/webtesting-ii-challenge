@@ -2,7 +2,7 @@
  * Dependencies
  */
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Dashboard, Display } from '../components/Landing/index'
 
 /**
@@ -10,10 +10,45 @@ import { Dashboard, Display } from '../components/Landing/index'
  */
 
 function Landing() {
+  const [strike_count, set_strike_count] = useState(0)
+  const [ball_count, set_ball_count] = useState(0)
+  const [foul_count, set_foul_count] = useState(0)
+  const [hit_count, set_hit_count] = useState(0)
+
+  const click_strike = () => {
+    set_strike_count(strike_count + 1)
+  }
+
+  const click_ball = () => {
+    set_ball_count(ball_count + 1)
+  }
+
+  const click_foul = () => {
+    set_foul_count(foul_count + 1)
+  }
+
+  const click_hit = () => {
+    set_hit_count(hit_count + 1)
+  }
+
+  const dashboard_props = {
+    click_strike,
+    click_ball,
+    click_foul,
+    click_hit,
+  }
+
+  const display_props = {
+    strike_count,
+    ball_count,
+    foul_count,
+    hit_count,
+  }
+
   return (
     <div>
-      <Dashboard />
-      <Display />
+      <Dashboard {...dashboard_props} />
+      <Display {...display_props} />
     </div>
   )
 }
