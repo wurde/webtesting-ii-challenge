@@ -4,7 +4,14 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { render, fireEvent, cleanup } from '@testing-library/react'
 import Landing from './Landing'
+
+/**
+ * Hooks
+ */
+
+afterAll(cleanup)
 
 /**
  * Assertions
@@ -12,10 +19,7 @@ import Landing from './Landing'
 
 describe("Landing.js", () => {
   test('renders without crashing', () => {
-    const div = document.createElement('div')
+    const { getByText } = render(<Landing />)
 
-    ReactDOM.render(<Landing />, div)
-
-    ReactDOM.unmountComponentAtNode(div)
   })
 })
