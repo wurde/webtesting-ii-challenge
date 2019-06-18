@@ -1,20 +1,31 @@
 {
   "name": "webtesting-ii-challenge",
-  "version": "1.0.0",
-  "description": "In this project, you will demonstrate proficiency by writing unit tests and production code to satisfy the _Minimum Viable Product_ described below.",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Web Testing II Challenge",
+  "private": true,
+  "main": "server/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/app.js",
+    "start:dev": "nodemon server/app.js",
+    "start:client": "npm --prefix client start"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wurde/webtesting-ii-challenge.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Andy Bettisworth",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wurde/webtesting-ii-challenge/issues"
   },
-  "homepage": "https://github.com/wurde/webtesting-ii-challenge#readme"
+  "homepage": "https://github.com/wurde/webtesting-ii-challenge#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
 }
