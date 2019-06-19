@@ -25,6 +25,18 @@ function Landing() {
 
     if (count === 3) {
       set_strike_count(0)
+      const new_out_count = out_count + 1
+      set_out_count(new_out_count)
+
+      if (new_out_count === 3) {
+        set_out_count(0)
+
+        if (current_inning[1] === 0) {
+          set_current_inning([current_inning[0], 1])
+        } else {
+          set_current_inning([current_inning[0] + 1, 0])
+        }
+      }
     } else {
       set_strike_count(strike_count + 1)
     }

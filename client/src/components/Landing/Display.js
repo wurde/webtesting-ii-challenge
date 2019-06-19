@@ -34,7 +34,7 @@ function Display(props) {
       </table>
 
       <ul style={{"list-style": "none", "padding-left": 0}}>
-        <li id="li-strikes"><b>Outs:</b> {props.strike_count}</li>
+        <li id="li-strikes"><b>Outs:</b> {props.out_count}</li>
         <li id="li-strikes"><b>Strikes:</b> {props.strike_count}</li>
         <li id="li-balls"><b>Balls:</b> {props.ball_count}</li>
         <li id="li-fouls"><b>Fouls:</b> {props.foul_count}</li>
