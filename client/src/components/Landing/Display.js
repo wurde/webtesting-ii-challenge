@@ -18,6 +18,7 @@ function Display(props) {
           <th colspan="9" style={{"text-align": "left"}}>Innings:</th>
         </tr>
         <tr>
+          <td>GUEST</td>
           {props.innings_array.map((inning, index) => {
             return (
               <td key={'top-' + index}>{inning[0]}</td>
@@ -25,11 +26,12 @@ function Display(props) {
           })}
         </tr>
         <tr>
-        {props.innings_array.map((inning, index) => {
-          return (
-            <td key={'bot-' + index}>{inning[1]}</td>
-          )
-        })}
+          <td>HOME</td>
+          {props.innings_array.map((inning, index) => {
+            return (
+              <td key={'bot-' + index}>{inning[1]}</td>
+            )
+          })}
         </tr>
       </table>
 

@@ -47,6 +47,13 @@ function Landing() {
 
     if (count === 4) {
       set_ball_count(0)
+      set_hit_count(hit_count + 1)
+      const new_innings_array = innings_array.map((inning, index) => {
+        if (current_inning[0] === index) {
+          inning[current_inning[1]] += 1
+        }
+        return inning
+      })
     } else {
       set_ball_count(ball_count + 1)
     }
